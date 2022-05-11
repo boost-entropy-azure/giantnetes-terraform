@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [9.3.0] - 2022-05-09
+
+### Changed
+
+- [AWS] Disable kernel route for eth1 interface to avoid routing trouble within AZ.
+- Bind Api Server to 0.0.0.0.
+- Remove Api Server advertise address to make it be automatic set to VM's default IP address.
+
 ## [9.2.0] - 2022-05-05
 
 ### Changed
@@ -527,7 +535,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantswarm/compare/v9.2.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantswarm/compare/v9.3.0...HEAD
+[9.3.0]: https://github.com/giantswarm/giantswarm/compare/v9.2.0...v9.3.0
 [9.2.0]: https://github.com/giantswarm/giantswarm/compare/v9.1.0...v9.2.0
 [9.1.0]: https://github.com/giantswarm/giantswarm/compare/v9.0.0...v9.1.0
 [9.0.0]: https://github.com/giantswarm/giantswarm/compare/v8.4.1...v9.0.0
