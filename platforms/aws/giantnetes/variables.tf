@@ -130,7 +130,7 @@ variable "flatcar_linux_channel" {
 variable "flatcar_linux_version" {
   description = "Flatcar linux version."
   type        = string
-  default     = "3139.2.2"
+  default     = "3139.2.3"
 }
 
 variable "flatcar_ami_owner" {
@@ -145,7 +145,7 @@ variable "docker_registry" {
 
 variable "hyperkube_version" {
   type    = string
-  default = "1.22.10"
+  default = "1.22.11"
 }
 
 ### DNS ###
@@ -328,7 +328,7 @@ variable "image_pull_progress_deadline" {
 }
 
 variable "pod_infra_image" {
-  default = "giantswarm/pause-amd64:3.1"
+  default = "giantswarm/pause-amd64:3.3"
 }
 
 ### External Kubernetes API Access

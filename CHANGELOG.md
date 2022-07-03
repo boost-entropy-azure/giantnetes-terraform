@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Enabled auditd on masters, workers and bastions.
+
+### Changed
+
+- Bump flatcar to `3139.2.3`.
+- Bump kubernetes to `1.22.11`.
+- Bump `coredns` app to `1.10.1`.
+- Bump `nginx-ingress-controller` app to `2.14.0`.
+- [AWS] Bump `aws-ebs-csi-driver` to `2.14.0`.
+- [AWS] Bump `aws-node-termination-handler` to `1.16.5-gs1`.
+- [AWS] Bump `aws-cloud-controller-manager` to `1.22.4-gs1`.
+- [Azure] Bump `azuredisk-csi-driver` to `1.19.0-gs1`.
+- [Azure] Bump `azure-cloud-controller-manager` to `1.1.17-gs1`.
+- [Azure] Bump `azure-cloud-node-manager` to `1.1.17-gs1`.
+
+### Fixed
+
+- Bump etcd image version to 3.5.4 for etcd3-defrag unit.
+
+## [10.2.0] - 2022-06-29
+
+### Changed
+
+- Use containerd socket instead of dockershim in the kubelet config.
+- [AWS] Bump to AWS-cni 1.11.2 and mount containerd socket instead of dockershim one to `aws-node` pods.
+- Bump Pod Infra image to `giantswarm/pause-amd64:3.3`.
+
 ## [10.1.0] - 2022-06-23
 
 ### Added
@@ -565,7 +594,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantswarm/compare/v10.1.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantswarm/compare/v10.2.0...HEAD
+[10.2.0]: https://github.com/giantswarm/giantswarm/compare/v10.1.0...v10.2.0
 [10.1.0]: https://github.com/giantswarm/giantswarm/compare/v10.0.1...v10.1.0
 [10.0.1]: https://github.com/giantswarm/giantswarm/compare/v10.0.0...v10.0.1
 [10.0.0]: https://github.com/giantswarm/giantswarm/compare/v9.4.0...v10.0.0
