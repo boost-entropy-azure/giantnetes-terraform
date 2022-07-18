@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [12.0.0] - 2022-07-18
+
 ### Fixed
 
 - Fix runtime and image endpoint for crictl.
@@ -17,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Enabled auditd on masters, workers and bastions.
 - Add registry mirror setting for containerd.
+- Add CiliumLocalRedirectPolicy for aad pod identity.
 
 ### Changed
 
@@ -31,6 +34,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Azure] Bump `azuredisk-csi-driver` to `1.19.0-gs1`.
 - [Azure] Bump `azure-cloud-controller-manager` to `1.1.17-gs1`.
 - [Azure] Bump `azure-cloud-node-manager` to `1.1.17-gs1`.
+- Switch from `calico` and `kube-proxy` to `Cilium`.
+
+### Removed
+
+- Don't create priority classes any more (chart-operator does that now).
 
 ### Fixed
 
@@ -606,7 +614,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantswarm/compare/v11.0.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v12.0.0...HEAD
+[12.0.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v11.0.0...v12.0.0
 [11.0.0]: https://github.com/giantswarm/giantswarm/compare/v10.2.0...v11.0.0
 [10.2.0]: https://github.com/giantswarm/giantswarm/compare/v10.1.0...v10.2.0
 [10.1.0]: https://github.com/giantswarm/giantswarm/compare/v10.0.1...v10.1.0
