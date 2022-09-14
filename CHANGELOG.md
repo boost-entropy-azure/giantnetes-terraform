@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [14.0.0] - 2022-09-14
+
 ### Added
 
 - Automatically set `--max-requests-inflight`, `--max-mutating-requests-inflight` and resource limits to API Server's manifest based on node size.
@@ -18,7 +20,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Change permission of etcd key file in order to make `etcd-kubernetes-resources-count-exporter` app to run with unprivileged user.
-
+- Remove unused `ImagePullProgressDeadline` variable.
+- Remove deprecated flags from kubelet and scheduler.
+- Bump to kubernetes `1.24.4`.
+- Bump `nginx-ingress-controller` app to version `2.17.0`.
+- [AWS] Bump `aws-cloud-controller-manager-app` to version `1.24.1-gs1`.
+- [AWS] Bump `aws-node-termination-handler-app` to version `1.17.2-gs1`.
+- [Azure] Bump `azure-cloud-controller-manager` to version `1.24.5-gs1`.
+- [Azure] Bump `azure-cloud-node-manager` to version `1.24.5-gs1`.
+- [Azure] Bump `azure-scheduled-events` to version `0.8.0`.
+- Change default registry from quay.io to docker.io.
+ 
 ## [13.1.0] - 2022-09-06
 
 ### Changed
@@ -661,7 +673,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v13.1.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.0.0...HEAD
+[14.0.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v13.1.0...v14.0.0
 [13.1.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v13.0.1...v13.1.0
 [13.0.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v13.0.0...v13.0.1
 [13.0.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v12.0.0...v13.0.0
