@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [14.1.1] - 2022-09-28
+
+### Fixed
+
+- Add nat gateway to vault instance to allow egress traffic.
+
+## [14.1.0] - 2022-09-28
+
+### Added
+
+- Create VPN connection on azure.
+
+### Changed
+
+- Change Azure vault load balancer's SKU to Standard.
+- Change Azure VPN public IP load balancer's SKU to Standard.
+- Set `metadata_options.http_put_response_hop_limit` to 5 for AWS launch configurations.
+
 ## [14.0.0] - 2022-09-14
 
 ### Added
@@ -673,7 +691,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.0.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.1.1...HEAD
+[14.1.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.1.0...v14.1.1
+[14.1.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.0.0...v14.1.0
 [14.0.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v13.1.0...v14.0.0
 [13.1.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v13.0.1...v13.1.0
 [13.0.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v13.0.0...v13.0.1

@@ -2,6 +2,7 @@ resource "azurerm_lb" "vault_lb" {
   name                = "${var.cluster_name}-vault-lb"
   location            = var.location
   resource_group_name = var.resource_group_name
+  sku                 = "Standard"
 
   frontend_ip_configuration {
     name      = "vault"
@@ -45,4 +46,30 @@ resource "azurerm_lb_probe" "vault_lb" {
   port                = 8200
   interval_in_seconds = 5
   number_of_probes    = 2
+}
+
+resource "azurerm_nat_gateway" "vault_nat_gateway" {
+  name                    = "${var.cluster_name}-vault-nat-gateway"
+  location                = var.location
+  resource_group_name     = var.resource_group_name
+  sku_name                = "Standard"
+  idle_timeout_in_minutes = 10
+}
+
+resource "azurerm_public_ip" "vault_nat_gw_public_ip" {
+  name                = "${var.cluster_name}-vault-nat-gateway-publicIP"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  allocation_method   = "Static"
+  sku                 = "Standard"
+}
+
+resource "azurerm_nat_gateway_public_ip_association" "vault_nat_gw_ip_association" {
+  nat_gateway_id       = azurerm_nat_gateway.vault_nat_gateway.id
+  public_ip_address_id = azurerm_public_ip.vault_nat_gw_public_ip.id
+}
+
+resource "azurerm_subnet_nat_gateway_association" "vault_nat_gw_subnet_association" {
+  subnet_id      = azurerm_subnet.vault_subnet.id
+  nat_gateway_id = azurerm_nat_gateway.vault_nat_gateway.id
 }
