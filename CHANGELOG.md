@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [14.4.0] - 2022-10-13
+
+### Changed
+
+- Bump cilium to 0.4.0.
+- Run EBS controller only on masters on AWS management clusters.
+
 ## [14.3.0] - 2022-10-05
 
 ### Changed
@@ -703,7 +710,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.3.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.4.0...HEAD
+[14.4.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.3.0...v14.4.0
 [14.3.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.2.0...v14.3.0
 [14.2.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.1.1...v14.2.0
 [14.1.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.1.0...v14.1.1
