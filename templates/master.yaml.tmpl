@@ -60,6 +60,16 @@ storage:
         source: "data:text/plain;charset=utf-8;base64,{{ index .Files "k8s-resource/azure-ad-pod-identity-lrp.yaml" }}"
 {{ end }}
 
+    - path: /srv/cilium-egress.yaml
+      filesystem: root
+      mode: 420
+      user:
+        id: 0
+      group:
+        id: 0
+      contents:
+        source: "data:text/plain;charset=utf-8;base64,{{ index .Files "k8s-resource/cilium-egress.yaml" }}"
+
     - path: /srv/default-storage-class.yaml
       filesystem: root
       mode: 420
@@ -947,7 +957,7 @@ systemd:
       RestartSec=0
       TimeoutStopSec=10
       LimitNOFILE=40000
-      Environment=IMAGE={{.DockerRegistry}}/giantswarm/etcd:v3.5.4
+      Environment=IMAGE={{.DockerRegistry}}/giantswarm/etcd:v3.5.5
       Environment=NAME=%p.service
       EnvironmentFile=/etc/network-environment
       {{if eq .Provider "azure" }}EnvironmentFile=-/var/lib/etcd/master-id{{end}}
@@ -1007,7 +1017,7 @@ systemd:
       EnvironmentFile=/etc/environment
       {{if eq .Provider "azure" }}EnvironmentFile=-/var/lib/etcd/master-id{{end}}
       {{if eq .Provider "aws" }}Environment=MASTER_ID={{.MasterID}}{{end}}
-      Environment=IMAGE={{.DockerRegistry}}/giantswarm/etcd:v3.5.4
+      Environment=IMAGE={{.DockerRegistry}}/giantswarm/etcd:v3.5.5
       Environment=NAME=%p.service
       ExecStartPre=-/usr/bin/docker stop  $NAME
       ExecStartPre=-/usr/bin/docker rm  $NAME
@@ -1152,7 +1162,7 @@ systemd:
       {{ end -}}
       --register-node=true \
       --kubeconfig=/etc/kubernetes/kubeconfig/kubelet.yaml \
-      --node-labels="node.kubernetes.io/master,role=master,ip=${DEFAULT_IPV4},master-id=${MASTER_ID}" \
+      --node-labels="node-role.kubernetes.io/control-plane,node.kubernetes.io/master,role=master,ip=${DEFAULT_IPV4},master-id=${MASTER_ID}" \
       --v=2
       ExecStop=-/usr/bin/docker stop -t 10 $NAME
       ExecStopPost=-/usr/bin/docker rm -f $NAME
