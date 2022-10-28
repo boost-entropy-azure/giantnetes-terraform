@@ -1162,7 +1162,7 @@ systemd:
       {{ end -}}
       --register-node=true \
       --kubeconfig=/etc/kubernetes/kubeconfig/kubelet.yaml \
-      --node-labels="node-role.kubernetes.io/control-plane,node.kubernetes.io/master,role=master,ip=${DEFAULT_IPV4},master-id=${MASTER_ID}" \
+      --node-labels="node.kubernetes.io/master,role=master,ip=${DEFAULT_IPV4},master-id=${MASTER_ID}" \
       --v=2
       ExecStop=-/usr/bin/docker stop -t 10 $NAME
       ExecStopPost=-/usr/bin/docker rm -f $NAME
@@ -1183,7 +1183,8 @@ systemd:
       ExecStart=/bin/sh -c '\
         while [ "$($KUBECTL get nodes $(hostname | tr '[:upper:]' '[:lower:]')| wc -l)" -lt "1" ]; do echo "Waiting for healthy k8s" && sleep 20s;done; \
         $KUBECTL label nodes --overwrite $(hostname | tr '[:upper:]' '[:lower:]') node-role.kubernetes.io/master=""; \
-        $KUBECTL label nodes --overwrite $(hostname | tr '[:upper:]' '[:lower:]') kubernetes.io/role=master'
+        $KUBECTL label nodes --overwrite $(hostname | tr '[:upper:]' '[:lower:]') kubernetes.io/role=master; \
+        $KUBECTL label nodes --overwrite $(hostname | tr '[:upper:]' '[:lower:]') node-role.kubernetes.io/control-plane=""'
       [Install]
       WantedBy=multi-user.target
   - name: api-certs.service

@@ -7,15 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [14.6.0] - 2022-10-28
+
 ### Changed
 
-- Add `node-role.kubernetes.io/control-plane` label to master nodes to comply with CAPI.
 - [Azure] Create CiliumLocalRedirectPolicy for Azure AD pod identity app after creating App CRs to avoid race condition.
 - Bump to flatcar `3227.2.3`.
 - Bump kubernetes to `1.24.7`.
 - Bump etcd to `3.5.5`.
 - Bump `nginx-ingress-controller-app` to version `2.19.0`.
 - [Azure] Bump `azuredisk-csi-driver-app` to version `v1.21.0-gs4`.
+- Label master nodes with `node-role.kubernetes.io/control-plane` to comply with kubeadm/CAPI.
 
 ### Fixed
 
@@ -740,7 +742,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.5.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.6.0...HEAD
+[14.6.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.5.0...v14.6.0
 [14.5.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.4.1...v14.5.0
 [14.4.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.4.0...v14.4.1
 [14.4.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.3.0...v14.4.0
