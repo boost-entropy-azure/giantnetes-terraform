@@ -76,6 +76,19 @@ resource "aws_iam_role_policy" "master" {
     {
         "Effect": "Allow",
         "Action": [
+            "s3:ListBucket",
+            "s3:PutObject",
+            "s3:GetObject",
+            "s3:DeleteObject" 
+        ],
+        "Resource": [
+            "arn:${var.arn_region}:s3:::${var.cluster_name}-g8s-mimir",
+            "arn:${var.arn_region}:s3:::${var.cluster_name}-g8s-mimir/*"
+        ]
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
           "ec2:AssignPrivateIpAddresses",
           "ec2:AttachNetworkInterface",
           "ec2:CreateNetworkInterface",
@@ -155,6 +168,15 @@ resource "aws_iam_role_policy" "master" {
         ],
         "Resource": [
           "*"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "autoscaling:SetInstanceHealth"
+        ],
+        "Resource": [
+          "arn:${var.arn_region}:autoscaling:${var.aws_region}:${var.aws_account}:autoScalingGroup:*:autoScalingGroupName/${var.cluster_name}-master-*"
         ]
       }
   ]
