@@ -7,9 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [14.16.0] - 2023-06-21
+
+### Changed
+
+- Bump flatcar to `3510.2.2`.
+- Bump etcd to `3.5.9`.
+- Bump kubernetes to `1.24.15`.
+- Bump aws-cloud-controller-manager to `1.24.1-gs8`.
+- Bump `aws-ebs-csi-driver-app` to `2.24.0`.
+- Bump `azure-cloud-controller-manager` to `1.24.18-gs4`.
+- Bump `azure-cloud-node-manager` to `1.24.18-gs3`.
+- Bump `azuredisk-csi-driver` to `1.26.2-gs4`.
+- Bump `cilium-app` to `0.10.0`.
+- Bump `coredns-app` to `1.17.0`.
+- Bump `nginx-ingress-controller-app` to `2.30.1`.
+ 
 ### Removed
 
 - Remove CSIMigration feature flag (enabled by default with k8s 1.23).
+- Allow port 2112 on vault instance for vault-etcd-backups-exporter.
 
 ## [14.15.1] - 2023-05-29
 
@@ -870,7 +887,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.15.1...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.16.0...HEAD
+[14.16.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.15.1...v14.16.0
 [14.15.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.15.0...v14.15.1
 [14.15.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.14.0...v14.15.0
 [14.14.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.13.0...v14.14.0
