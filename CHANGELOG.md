@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [14.16.1] - 2023-07-04
+
 ### Changed
 
 - nginx-ingress-controller: Improve requests and autoscaling. ([#715](https://github.com/giantswarm/giantnetes-terraform/pull/715))
+
+### Fixed
+
+- [AWS] Fix vpce policy to make etcd backups exporter work on vault VMs.
 
 ## [14.16.0] - 2023-06-21
 
@@ -891,7 +897,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.16.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.16.1...HEAD
+[14.16.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.16.0...v14.16.1
 [14.16.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.15.1...v14.16.0
 [14.15.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.15.0...v14.15.1
 [14.15.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.14.0...v14.15.0
