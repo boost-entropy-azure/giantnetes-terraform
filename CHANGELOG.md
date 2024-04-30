@@ -7,9 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [15.0.1] - 2024-04-30
+
+### Fixed
+
+- Fix containerd config to make it work with newer flatcar.
+
+## [15.0.0] - 2024-04-30
+
 ### Changed
 
-- Bump `coredns-app` to `1.21.0`.
+- Bump `flatcar` to `3815.2.2`.
+- Bump `coredns-app` to `1.21.0` and force enable PSS.
+- Bump `cilium-app` to `0.21.0` and force enable PSS.
+- Bump `aws-cloud-controller-manager` to `1.25.14-gs2` and force enable PSS.
+- Bump `aws-ebs-csi-driver` to `2.28.1` and force enable PSS.
+- Bump `aws-node-termination-handler` to `1.19.0` and force enable PSS.
+- Disable PSPs for `ingress-nginx`.
+
+### Remove
+
+- Removed `restricted-psp-user` and used `privileged-psp-user` instead.
 
 ## [14.20.0] - 2024-01-08
 
@@ -952,7 +970,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.20.0...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v15.0.1...HEAD
+[15.0.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v15.0.0...v15.0.1
+[15.0.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.20.0...v15.0.0
 [14.20.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.19.0...v14.20.0
 [14.19.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.18.0...v14.19.0
 [14.18.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.17.0...v14.18.0
