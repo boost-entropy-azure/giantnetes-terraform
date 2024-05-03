@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [16.0.0] - 2024-05-02
+
+### Changed
+
+- Bump kubernetes to `1.25.15`.
+
 ## [15.0.1] - 2024-04-30
 
 ### Fixed
@@ -970,7 +976,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add github release workflows.
 
-[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v15.0.1...HEAD
+[Unreleased]: https://github.com/giantswarm/giantnetes-terraform/compare/v16.0.0...HEAD
+[16.0.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v15.0.1...v16.0.0
 [15.0.1]: https://github.com/giantswarm/giantnetes-terraform/compare/v15.0.0...v15.0.1
 [15.0.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.20.0...v15.0.0
 [14.20.0]: https://github.com/giantswarm/giantnetes-terraform/compare/v14.19.0...v14.20.0
